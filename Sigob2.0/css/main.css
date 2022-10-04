@@ -1,0 +1,230 @@
+﻿/*@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@600&family=Montserrat:wght@500&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+
+body {
+    padding: 0;
+    margin: 0;
+    /*font-family: 'Ubuntu', sans-serif;*/
+    /*font-family: 'Cormorant', serif;*/
+    font-family: 'montserrat', sans-serif;
+}
+
+
+.main-container {
+    background-color: #ffffff;
+    margin-top: -35px;
+    border-radius: 8px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px 0 20px 0;
+}
+
+
+.icons {
+    font-size: 10px !important;
+}
+
+    .icons a {
+        
+    }
+
+header .logo-container {
+    padding-left: 30px;
+}
+
+nav .profile-container {
+    display: block;
+    text-align: center;
+    padding: 15px 0 15px 0;
+}
+
+    nav .profile-container img {
+        width: 80px;
+        height: 80px;
+        border-radius: 40%;
+    }
+
+    nav .profile-container p {
+        font-size: 5px !important;
+    }
+
+nav ul {
+/*list-style: none;*/
+}
+
+nav ul li {
+display: block;
+position: relative;
+}
+
+nav ul li:hover {
+/*background: #E6344A;*/
+}
+
+nav ul li a {
+color: #272e7c;
+display: block;
+text-decoration: none;
+padding: 10px;
+}
+
+nav ul li a span {
+    margin-right: 10px;
+}
+
+nav ul li:hover .children {
+display: block;
+}
+
+nav ul li .children {
+display: none;
+/*background: #011826;*/
+position: absolute;
+width: 150%;
+z-index: 1000;
+}
+
+nav ul li .children li {
+    display: block;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255,255,255,.5);
+}
+
+    nav ul li .children li a {
+        display: block;
+    }
+
+        nav ul li .children li a span {
+            float: right;
+            position: relative;
+            top: 3px;
+            margin-right: 0;
+            margin-left: 10px;
+        }
+
+nav ul li .caret {
+position: relative;
+top: 3px;
+margin-left: 10px;
+margin-right: 0px;
+}
+
+.pie {
+    justify-content: flex-start;
+    vertical-align: bottom;
+}
+
+
+.main-titulo {
+    background-color: #6f4220;
+    color: white;
+    height: 110px;
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    padding-left: 25px;
+    padding-top: 20px;
+}
+
+
+
+.title-container {
+    padding: 0 15px 0 15px;
+    font-size: 8px !important;
+}
+
+.items-container {
+    padding: 0 25px 0 25px;
+}
+
+.card-container {
+    margin-top: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px 0 20px 0;
+}
+
+.title-container h5 {
+    font-size: 15px !important;
+}
+
+.divtituloprod
+{
+    padding: 10px 0 10px 0;
+}
+.divtituloprod h2 {
+    font-size: 18px !important;
+}
+
+.divtituloprod h3 {
+    font-size: 15px !important;
+}
+
+
+.divespacio{
+    height:30px;
+}
+
+.btnPrimario {
+    background-color: #d27d2f;
+    color:white;
+    width:170px;
+}
+
+.btnActualizar {
+    background-color: #f3b366;
+    color: white;
+    width: 170px;
+}
+
+
+ /*Small devices (landscape phones, 576px and up)*/
+@media (max-width: 575.98px) {
+    .main-container {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .card-container {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (max-width: 767.98px) {
+    .main-container {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .card-container {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (max-width: 991.98px) {
+
+    .main-container {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .card-container {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+/*// X-Large devices (large desktops, 1200px and up)*/
+@media (max-width: 1199.98px) {
+}
+
+/*// XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) {
+    
+}
+

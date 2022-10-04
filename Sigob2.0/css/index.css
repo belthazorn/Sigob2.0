@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+
+:root {
+    --ct-page-title-color: #6c757d;
+}
+.body {
+    font-family: 'Nunito', sans-serif;
+}
+
+.text-platzi {
+  color: #282828 !important;
+  font-size: 1em;
+  font-weight:600 !important;
+}
+
+
+.text-descripcion {
+    color: #282828 !important;
+    font-size: 1em;
+    font-weight: 400 !important;
+}
+
+.text-precio {
+    color: #ff0000 !important;
+    font-size: 1.05em;
+    font-weight: 600 !important;
+}
+
+.text-precio-promo {
+    color: #000000 !important;
+    font-size: 1em;
+    font-weight: 500 !important;
+    text-decoration: line-through;
+}
+.divlogo{
+
+}
+.page-title-box {
+    background-color: #f9fafd;
+    padding: 20px 0px 20px 0px;
+}
+
+    .page-title-box .page-title {
+        font-family: 'Nunito', sans-serif;
+        font-size: 18px;
+        margin: 0;
+        line-height: 75px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: var(--ct-page-title-color);
+    }
+.cards-title-r {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+}
+
+.cards-content-r {
+    font-family: 'Nunito', sans-serif;
+    font-size: 25px;
+}
+
+.icon-back {
+    color:white;
+    background-color: #808080 !important;
+}

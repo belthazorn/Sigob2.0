@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Sigob2.0", "Sigob2.0\", "{56AE2363-8C16-41B2-A803-DC36B15F12F9}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_52669"
+		Debug.AspNetCompiler.PhysicalPath = "Sigob2.0\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52669\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_52669"
+		Release.AspNetCompiler.PhysicalPath = "Sigob2.0\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52669\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "52669"
+		SlnRelativePath = "Sigob2.0\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56AE2363-8C16-41B2-A803-DC36B15F12F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56AE2363-8C16-41B2-A803-DC36B15F12F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BD92AB17-68CB-4B02-AB99-BBC4C088A18D}
+	EndGlobalSection
+EndGlobal

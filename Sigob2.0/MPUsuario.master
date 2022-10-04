@@ -1,0 +1,164 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MPUsuario.master.cs" Inherits="usuarios_MPUsuario" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sistema de control escolar">
+    <meta name="author" content="Scsi Soluciones en TI">
+    <title><%=Titulo%></title>
+
+    <!-- Bootstrap core CSS -->    
+    <link href="css/dashboard.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/generales.css" rel="stylesheet" />
+    <link href="css/modal.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+            </Scripts>
+        </asp:ScriptManager>
+        <header class="navbar sticky-top flex-md-nowrap p-2 bakcmenu" style=" box-shadow: 0px 3px 15px rgb(77, 76, 76) !important" >
+            <div class="logo-container">
+                <img src="../images/logo.png" alt="Logo" width ="80%">
+            </div>
+
+            <button class="navbar-toggler position-absolute d-md-none collapsed" style ="background-color:white;" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+                    <nav class="navbar m-0 p-0" id="main-nav">
+                        <div class="profile-container align-content-center text-center justify-content-center" >
+                            <img src="../images/Foto.png" alt="Imagen de usuario">
+                            <p style="font-size: 14px !important; font-weight: 700;">
+                                <%=Alumno%> &nbsp &nbsp <a href="wfperfil.aspx"><i class="bi bi-pencil-square"></i></a>
+                            </p>
+                        </div>
+                        <div class="px-4 pt-2" id="div-main-nav">
+                            <div class="nav-side-bar" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+
+                                <div class="offcanvas-body">
+                                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../Default.aspx">INICIO</a>
+                                        </li>
+
+                                        <!-- INICIA DROPDOWN GESTION-->
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                                aria-expanded="false">GESTION
+                                            </a>
+                                            <ul class="dropdown-menu border-0">
+                                                <li><a class="dropdown-item" href="/usuarios/wfCatUsuarios.aspx">Usuarios</a></li>
+                                                <li><a class="dropdown-item" href="/kardex/kardex.aspx">Kardex policial</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- FINALIZA DROPDOWN -->
+
+                                        <!-- INICIA DROPDOWN CTRL MOV Y EQUIPO-->
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                                aria-expanded="false">CONTROL DE MOVILIARIO Y EQUIPO
+                                            </a>
+                                            <ul class="dropdown-menu border-0">
+                                                <li><a class="dropdown-item" href="/inventario/MasterPageInventario.master">Inventario</a></li>
+                                                <li><a class="dropdown-item" href="#">Mantenimiento vehicular</a></li>
+                                                <li><a class="dropdown-item" href="#">Armamento, rquipo tactico
+                                                    <br>
+                                                    y municiones</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- FINALIZA DROPDOWN -->
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">GESTION DOCUMENTAL</a>
+                                        </li>
+
+                                        <!-- INICIA DROPDOWN OPERACION PILICIAL-->
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                                aria-expanded="false">OPERACION POLICIAL
+                                            </a>
+                                            <ul class="dropdown-menu border-0">
+                                                <li><a class="dropdown-item" href="#">Registro de multas
+                                                    <br>
+                                                    de transito</a></li>
+                                                <li><a class="dropdown-item" href="#">Registro de incidencias
+                                                    <br>
+                                                    y actividades de proximidad</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="#">Registro de aseguramientos</a></li>
+                                                <li><a class="dropdown-item" href="#">Registro de empresas de
+                                                    <br>
+                                                    seguridad privada</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- FINALIZA DROPDOWN -->
+
+                                        <!-- INICIA DROPDOWN CONTROL DIRECTIVO-->
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                                aria-expanded="false">CONTROL DIRECTIVO
+                                            </a>
+                                            <ul class="dropdown-menu border-0">
+                                                <li><a class="dropdown-item" href="#">Tablero de resultados</a></li>
+                                                <li><a class="dropdown-item" href="#">Cumplimiento de metas
+                                                    <br>
+                                                    y objetivos</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- FINALIZA DROPDOWN -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+
+
+                </div>
+                <main class="col-md-9 ms-sm-auto col-lg-10" style="background-color: #f4f7fc; height: 100%;">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </main>
+            </div>
+        </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>             
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    </form>
+</body>
+</html>
+

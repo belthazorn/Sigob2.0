@@ -1,0 +1,38 @@
+﻿
+
+.bakcmenu {
+    background-color: #e1e1e1 !important;
+}
+
+.bottonlogin {
+    background-color: #515251 !important;
+    color: #ffffff !important;
+    /*font-family: 'Cormorant', serif !important;*/
+}
+
+.logintitulo {
+    background-color:#2f3132 !important;
+}
+
+.fortercolor {
+    background-color: #515251;
+}
+
+.btnsecu {
+    background-color: #818c91 !important;
+    color: #ffffff !important;
+    /*font-family: 'Montserrat', sans-serif !important;*/
+}
+
+.piemodal {
+    background-color: #eeeeee !important;
+}
+
+txtprimario {
+    color: #515251 !important;
+}
+
+
+backgroundprima {
+    background-color: #818c91  !important;
+}

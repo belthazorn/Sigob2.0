@@ -1,0 +1,1123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="generapass">
+        <s:complexType />
+      </s:element>
+      <s:element name="generapassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="generapassResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosAlta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="p" type="tns:Usuarios" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Usuarios">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UsuarioId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpeladoId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contraseña" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Estatus" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PerfilId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Actualiza" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UsuariosAltaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuariosAltaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosActualiza">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="p" type="tns:Usuarios" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosActualizaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuariosActualizaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosActualizadepe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="p" type="tns:Usuarios" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosActualizadepeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuariosActualizadepeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosBorra">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosBorraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuariosBorraResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosActualizaPass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contraseña" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosActualizaPassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuariosActualizaPassResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuariosLoginResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DatosUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DatosUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DatosUsuarioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DatosUsuarioid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DatosUsuarioidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DatosUsuarioidResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosGrid">
+        <s:complexType />
+      </s:element>
+      <s:element name="UsuariosGridResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuariosGridResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosBuscaNombre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosBuscaNombreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuariosBuscaNombreResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DatosUsuariomail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DatosUsuariomailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DatosUsuariomailResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosBuscaEmleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Empleadoid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuariosBuscaEmleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuariosBuscaEmleadoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ComboPerfiles">
+        <s:complexType />
+      </s:element>
+      <s:element name="ComboPerfilesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ComboPerfilesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BusquedaCurp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="curp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BusquedaCurpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BusquedaCurpResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BusquedaNombre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="materno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BusquedaNombreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BusquedaNombreResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KardexRegresaMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KardexRegresaMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KardexRegresaMailResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KardexAlta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="p" type="tns:kardex" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="kardex">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Paterno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Materno" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaNacimiento" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="RFC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CURP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SEXO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="correoins" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="correoper" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="estadocivil" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="celuarp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="celularof" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="tiposangre" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="licenciatipo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="licencianumero" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="licenciafin" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dependientes" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="nss" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fechaingreso" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="noempleado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="claveelector" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="estatus" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="beneficiario" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="KardexAltaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KardexAltaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KardexActualiza">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="p" type="tns:kardex" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KardexActualizaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KardexActualizaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KardexAdscripcionAlta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="p" type="tns:kardexadscripcion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="kardexadscripcion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AdscripcionId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KardexId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Adscripcion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FuncionesId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Instalaciones" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaAsignacion" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaInicioCargo" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="OficioAsignacion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Estatus" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="area" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="KardexAdscripcionAltaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KardexAdscripcionAltaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KardexAdscripcionUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="p" type="tns:kardexadscripcion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KardexAdscripcionUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KardexAdscripcionUpdateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KardexControlAlta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="p" type="tns:KardexControl" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="KardexControl">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ControlId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KardexId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Evaluacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InstanciaEvalua" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaEvaluacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NoCertificado" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="KardexControlAltaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KardexControlAltaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KardexControlUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="p" type="tns:KardexControl" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KardexControlUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KardexControlUpdateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="generapassSoapIn">
+    <wsdl:part name="parameters" element="tns:generapass" />
+  </wsdl:message>
+  <wsdl:message name="generapassSoapOut">
+    <wsdl:part name="parameters" element="tns:generapassResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosAltaSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuariosAlta" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosAltaSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuariosAltaResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosActualizaSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuariosActualiza" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosActualizaSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuariosActualizaResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosActualizadepeSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuariosActualizadepe" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosActualizadepeSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuariosActualizadepeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosBorraSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuariosBorra" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosBorraSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuariosBorraResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosActualizaPassSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuariosActualizaPass" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosActualizaPassSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuariosActualizaPassResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuariosLogin" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuariosLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="DatosUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:DatosUsuario" />
+  </wsdl:message>
+  <wsdl:message name="DatosUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:DatosUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="DatosUsuarioidSoapIn">
+    <wsdl:part name="parameters" element="tns:DatosUsuarioid" />
+  </wsdl:message>
+  <wsdl:message name="DatosUsuarioidSoapOut">
+    <wsdl:part name="parameters" element="tns:DatosUsuarioidResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosGridSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuariosGrid" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosGridSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuariosGridResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosBuscaNombreSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuariosBuscaNombre" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosBuscaNombreSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuariosBuscaNombreResponse" />
+  </wsdl:message>
+  <wsdl:message name="DatosUsuariomailSoapIn">
+    <wsdl:part name="parameters" element="tns:DatosUsuariomail" />
+  </wsdl:message>
+  <wsdl:message name="DatosUsuariomailSoapOut">
+    <wsdl:part name="parameters" element="tns:DatosUsuariomailResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosBuscaEmleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuariosBuscaEmleado" />
+  </wsdl:message>
+  <wsdl:message name="UsuariosBuscaEmleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuariosBuscaEmleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ComboPerfilesSoapIn">
+    <wsdl:part name="parameters" element="tns:ComboPerfiles" />
+  </wsdl:message>
+  <wsdl:message name="ComboPerfilesSoapOut">
+    <wsdl:part name="parameters" element="tns:ComboPerfilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="BusquedaCurpSoapIn">
+    <wsdl:part name="parameters" element="tns:BusquedaCurp" />
+  </wsdl:message>
+  <wsdl:message name="BusquedaCurpSoapOut">
+    <wsdl:part name="parameters" element="tns:BusquedaCurpResponse" />
+  </wsdl:message>
+  <wsdl:message name="BusquedaNombreSoapIn">
+    <wsdl:part name="parameters" element="tns:BusquedaNombre" />
+  </wsdl:message>
+  <wsdl:message name="BusquedaNombreSoapOut">
+    <wsdl:part name="parameters" element="tns:BusquedaNombreResponse" />
+  </wsdl:message>
+  <wsdl:message name="KardexRegresaMailSoapIn">
+    <wsdl:part name="parameters" element="tns:KardexRegresaMail" />
+  </wsdl:message>
+  <wsdl:message name="KardexRegresaMailSoapOut">
+    <wsdl:part name="parameters" element="tns:KardexRegresaMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="KardexAltaSoapIn">
+    <wsdl:part name="parameters" element="tns:KardexAlta" />
+  </wsdl:message>
+  <wsdl:message name="KardexAltaSoapOut">
+    <wsdl:part name="parameters" element="tns:KardexAltaResponse" />
+  </wsdl:message>
+  <wsdl:message name="KardexActualizaSoapIn">
+    <wsdl:part name="parameters" element="tns:KardexActualiza" />
+  </wsdl:message>
+  <wsdl:message name="KardexActualizaSoapOut">
+    <wsdl:part name="parameters" element="tns:KardexActualizaResponse" />
+  </wsdl:message>
+  <wsdl:message name="KardexAdscripcionAltaSoapIn">
+    <wsdl:part name="parameters" element="tns:KardexAdscripcionAlta" />
+  </wsdl:message>
+  <wsdl:message name="KardexAdscripcionAltaSoapOut">
+    <wsdl:part name="parameters" element="tns:KardexAdscripcionAltaResponse" />
+  </wsdl:message>
+  <wsdl:message name="KardexAdscripcionUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:KardexAdscripcionUpdate" />
+  </wsdl:message>
+  <wsdl:message name="KardexAdscripcionUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:KardexAdscripcionUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="KardexControlAltaSoapIn">
+    <wsdl:part name="parameters" element="tns:KardexControlAlta" />
+  </wsdl:message>
+  <wsdl:message name="KardexControlAltaSoapOut">
+    <wsdl:part name="parameters" element="tns:KardexControlAltaResponse" />
+  </wsdl:message>
+  <wsdl:message name="KardexControlUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:KardexControlUpdate" />
+  </wsdl:message>
+  <wsdl:message name="KardexControlUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:KardexControlUpdateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsSigobSoap">
+    <wsdl:operation name="generapass">
+      <wsdl:input message="tns:generapassSoapIn" />
+      <wsdl:output message="tns:generapassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosAlta">
+      <wsdl:input message="tns:UsuariosAltaSoapIn" />
+      <wsdl:output message="tns:UsuariosAltaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosActualiza">
+      <wsdl:input message="tns:UsuariosActualizaSoapIn" />
+      <wsdl:output message="tns:UsuariosActualizaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosActualizadepe">
+      <wsdl:input message="tns:UsuariosActualizadepeSoapIn" />
+      <wsdl:output message="tns:UsuariosActualizadepeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosBorra">
+      <wsdl:input message="tns:UsuariosBorraSoapIn" />
+      <wsdl:output message="tns:UsuariosBorraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosActualizaPass">
+      <wsdl:input message="tns:UsuariosActualizaPassSoapIn" />
+      <wsdl:output message="tns:UsuariosActualizaPassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosLogin">
+      <wsdl:input message="tns:UsuariosLoginSoapIn" />
+      <wsdl:output message="tns:UsuariosLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DatosUsuario">
+      <wsdl:input message="tns:DatosUsuarioSoapIn" />
+      <wsdl:output message="tns:DatosUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DatosUsuarioid">
+      <wsdl:input message="tns:DatosUsuarioidSoapIn" />
+      <wsdl:output message="tns:DatosUsuarioidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosGrid">
+      <wsdl:input message="tns:UsuariosGridSoapIn" />
+      <wsdl:output message="tns:UsuariosGridSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosBuscaNombre">
+      <wsdl:input message="tns:UsuariosBuscaNombreSoapIn" />
+      <wsdl:output message="tns:UsuariosBuscaNombreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DatosUsuariomail">
+      <wsdl:input message="tns:DatosUsuariomailSoapIn" />
+      <wsdl:output message="tns:DatosUsuariomailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosBuscaEmleado">
+      <wsdl:input message="tns:UsuariosBuscaEmleadoSoapIn" />
+      <wsdl:output message="tns:UsuariosBuscaEmleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ComboPerfiles">
+      <wsdl:input message="tns:ComboPerfilesSoapIn" />
+      <wsdl:output message="tns:ComboPerfilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BusquedaCurp">
+      <wsdl:input message="tns:BusquedaCurpSoapIn" />
+      <wsdl:output message="tns:BusquedaCurpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BusquedaNombre">
+      <wsdl:input message="tns:BusquedaNombreSoapIn" />
+      <wsdl:output message="tns:BusquedaNombreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KardexRegresaMail">
+      <wsdl:input message="tns:KardexRegresaMailSoapIn" />
+      <wsdl:output message="tns:KardexRegresaMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KardexAlta">
+      <wsdl:input message="tns:KardexAltaSoapIn" />
+      <wsdl:output message="tns:KardexAltaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KardexActualiza">
+      <wsdl:input message="tns:KardexActualizaSoapIn" />
+      <wsdl:output message="tns:KardexActualizaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KardexAdscripcionAlta">
+      <wsdl:input message="tns:KardexAdscripcionAltaSoapIn" />
+      <wsdl:output message="tns:KardexAdscripcionAltaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KardexAdscripcionUpdate">
+      <wsdl:input message="tns:KardexAdscripcionUpdateSoapIn" />
+      <wsdl:output message="tns:KardexAdscripcionUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KardexControlAlta">
+      <wsdl:input message="tns:KardexControlAltaSoapIn" />
+      <wsdl:output message="tns:KardexControlAltaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KardexControlUpdate">
+      <wsdl:input message="tns:KardexControlUpdateSoapIn" />
+      <wsdl:output message="tns:KardexControlUpdateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsSigobSoap" type="tns:wsSigobSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="generapass">
+      <soap:operation soapAction="http://tempuri.org/generapass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosAlta">
+      <soap:operation soapAction="http://tempuri.org/UsuariosAlta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosActualiza">
+      <soap:operation soapAction="http://tempuri.org/UsuariosActualiza" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosActualizadepe">
+      <soap:operation soapAction="http://tempuri.org/UsuariosActualizadepe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosBorra">
+      <soap:operation soapAction="http://tempuri.org/UsuariosBorra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosActualizaPass">
+      <soap:operation soapAction="http://tempuri.org/UsuariosActualizaPass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosLogin">
+      <soap:operation soapAction="http://tempuri.org/UsuariosLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DatosUsuario">
+      <soap:operation soapAction="http://tempuri.org/DatosUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DatosUsuarioid">
+      <soap:operation soapAction="http://tempuri.org/DatosUsuarioid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosGrid">
+      <soap:operation soapAction="http://tempuri.org/UsuariosGrid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosBuscaNombre">
+      <soap:operation soapAction="http://tempuri.org/UsuariosBuscaNombre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DatosUsuariomail">
+      <soap:operation soapAction="http://tempuri.org/DatosUsuariomail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosBuscaEmleado">
+      <soap:operation soapAction="http://tempuri.org/UsuariosBuscaEmleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComboPerfiles">
+      <soap:operation soapAction="http://tempuri.org/ComboPerfiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BusquedaCurp">
+      <soap:operation soapAction="http://tempuri.org/BusquedaCurp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BusquedaNombre">
+      <soap:operation soapAction="http://tempuri.org/BusquedaNombre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KardexRegresaMail">
+      <soap:operation soapAction="http://tempuri.org/KardexRegresaMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KardexAlta">
+      <soap:operation soapAction="http://tempuri.org/KardexAlta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KardexActualiza">
+      <soap:operation soapAction="http://tempuri.org/KardexActualiza" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KardexAdscripcionAlta">
+      <soap:operation soapAction="http://tempuri.org/KardexAdscripcionAlta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KardexAdscripcionUpdate">
+      <soap:operation soapAction="http://tempuri.org/KardexAdscripcionUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KardexControlAlta">
+      <soap:operation soapAction="http://tempuri.org/KardexControlAlta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KardexControlUpdate">
+      <soap:operation soapAction="http://tempuri.org/KardexControlUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsSigobSoap12" type="tns:wsSigobSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="generapass">
+      <soap12:operation soapAction="http://tempuri.org/generapass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosAlta">
+      <soap12:operation soapAction="http://tempuri.org/UsuariosAlta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosActualiza">
+      <soap12:operation soapAction="http://tempuri.org/UsuariosActualiza" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosActualizadepe">
+      <soap12:operation soapAction="http://tempuri.org/UsuariosActualizadepe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosBorra">
+      <soap12:operation soapAction="http://tempuri.org/UsuariosBorra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosActualizaPass">
+      <soap12:operation soapAction="http://tempuri.org/UsuariosActualizaPass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosLogin">
+      <soap12:operation soapAction="http://tempuri.org/UsuariosLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DatosUsuario">
+      <soap12:operation soapAction="http://tempuri.org/DatosUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DatosUsuarioid">
+      <soap12:operation soapAction="http://tempuri.org/DatosUsuarioid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosGrid">
+      <soap12:operation soapAction="http://tempuri.org/UsuariosGrid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosBuscaNombre">
+      <soap12:operation soapAction="http://tempuri.org/UsuariosBuscaNombre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DatosUsuariomail">
+      <soap12:operation soapAction="http://tempuri.org/DatosUsuariomail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuariosBuscaEmleado">
+      <soap12:operation soapAction="http://tempuri.org/UsuariosBuscaEmleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComboPerfiles">
+      <soap12:operation soapAction="http://tempuri.org/ComboPerfiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BusquedaCurp">
+      <soap12:operation soapAction="http://tempuri.org/BusquedaCurp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BusquedaNombre">
+      <soap12:operation soapAction="http://tempuri.org/BusquedaNombre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KardexRegresaMail">
+      <soap12:operation soapAction="http://tempuri.org/KardexRegresaMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KardexAlta">
+      <soap12:operation soapAction="http://tempuri.org/KardexAlta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KardexActualiza">
+      <soap12:operation soapAction="http://tempuri.org/KardexActualiza" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KardexAdscripcionAlta">
+      <soap12:operation soapAction="http://tempuri.org/KardexAdscripcionAlta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KardexAdscripcionUpdate">
+      <soap12:operation soapAction="http://tempuri.org/KardexAdscripcionUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KardexControlAlta">
+      <soap12:operation soapAction="http://tempuri.org/KardexControlAlta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KardexControlUpdate">
+      <soap12:operation soapAction="http://tempuri.org/KardexControlUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsSigob">
+    <wsdl:port name="wsSigobSoap" binding="tns:wsSigobSoap">
+      <soap:address location="http://localhost:50687/wsSigob.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsSigobSoap12" binding="tns:wsSigobSoap12">
+      <soap12:address location="http://localhost:50687/wsSigob.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
