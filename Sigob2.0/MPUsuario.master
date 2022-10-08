@@ -15,6 +15,7 @@
     <link href="css/main.css" rel="stylesheet" />
     <link href="css/generales.css" rel="stylesheet" />
     <link href="css/modal.css" rel="stylesheet" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .bd-placeholder-img {
@@ -82,7 +83,7 @@
                                             </a>
                                             <ul class="dropdown-menu border-0">
                                                 <li><a class="dropdown-item" href="/usuarios/wfCatUsuarios.aspx">Usuarios</a></li>
-                                                <li><a class="dropdown-item" href="/kardex/kardex.aspx">Kardex policial</a></li>
+                                                <li><a class="dropdown-item" href="/kardex/wfKardex.aspx">Kardex policial</a></li>
                                             </ul>
                                         </li>
                                         <!-- FINALIZA DROPDOWN -->
@@ -154,10 +155,11 @@
                 </main>
             </div>
         </div>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <%--<script src="js/bootstrap.bundle.min.js"></script>--%>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>             
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        
     </form>
 </body>
 </html>

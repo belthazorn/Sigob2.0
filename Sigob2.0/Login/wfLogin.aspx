@@ -76,27 +76,24 @@
 
 
 
-        <div class="modal fade" id="modalSlideUp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header" style="background-color: #153d77 !important; color: white;">
-                        <h5 class="modal-title" id="modalSlideUpLabel"><%=Titulo%></h5>
-                        <button type="button" class="btn-close btn-close-white" data-dismiss="modal" aria-label="Close">
-                            <%--<i class="bi bi-x-circle"></i>--%>
-                        </button>
-                    </div>
-                    <div class="rmodal-body">
-                        <p class="bold">&nbsp<i class="<%=Iconito%>"></i>&nbsp <%=Mensaje%></p>
-                    </div>
-                    <div class="modal-footer" style="background-color: #f4f7fc;">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal" runat="server" id="Button3"><%=TxtBoton%></button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal" runat="server" id="Button2" onserverclick="Button2_Click">Reenviar</button>
-                        <button type="button" class="btn btn-info" data-dismiss="modal" runat="server" id="Button5">Crear</button>
-
-                    </div>
+    <div class="modal fade" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="modalSlideUp" aria-labelledby="staticBackdropLabel" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style ="background-color:#6f4220; color:white;">
+                    <h5 class="modal-title" id="staticBackdropLabel"><%=Titulo%></h5>
+                    <button type="button" class="btn-close btn-close-white" data-dismiss="modal" aria-label="Close">                        
+                    </button>
+                </div>
+                <div class="rmodal-body">
+                    <p class="bold"><i class="<%=Iconito%>"></i>&nbsp <%=Mensaje%></p>
+                </div>
+                <div class="modal-footer bakcmenu">
+                    <%--<asp:Button ID="Button3" runat="server" class="btn btnPrimario"  causesvalidation="false" Text="OK" OnClick="Button3_Click" Visible="True" />                    --%>
+                    <button type="button" class="btn btnPrimario btn-lg" data-dismiss="modal" runat="server" id="Button5"><%=TxtBoton%></button>
                 </div>
             </div>
         </div>
+    </div>
 
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>

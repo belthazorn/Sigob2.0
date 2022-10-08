@@ -19,31 +19,31 @@
         <div class="title-container">
             <h5>--</h5>
         </div>
-    <div class="items-container">
-        <div class="row">
-            <div class="col-12 col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">SKU</label>
-                    <asp:TextBox ID="TextBox1" runat="server" class="form-control" placeholder="SKU" required autofocus></asp:TextBox>
-                </div>            
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Estatus</label>
-                    <asp:CheckBox ID="checkbox1" runat="server" class="form-control" Text="Activo"></asp:CheckBox>
+        <div class="items-container">
+            <div class="row">
+                <div class="col-12 col-lg-6 col-md-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">SKU</label>
+                        <asp:TextBox ID="TextBox1" runat="server" class="form-control" placeholder="SKU" required autofocus></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Estatus</label>
+                        <asp:CheckBox ID="checkbox1" runat="server" class="form-control" Text="Activo"></asp:CheckBox>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Prioridad</label>
+                        <asp:DropDownList ID="DropDownList1" class="form-control" placeholder="Prioridad" runat="server"></asp:DropDownList>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Prioridad</label>
-                    <asp:DropDownList ID="DropDownList1" class="form-control" placeholder="Prioridad" runat="server"></asp:DropDownList>
-                </div>                
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-12 col-lg-12" style="margin-top: 10px;">
-                <asp:Button ID="Button6" runat="server" class="btn btnActualizar btn-lg" CausesValidation="false" Text="Actualizar" OnClick="Button6_Click" OnClientClick="Button6_Click" Visible="True" />
-                <asp:Button ID="Button2" runat="server" class="btn btnPrimario btn-lg" CausesValidation="false" Text="Guardar" OnClick="Button2_Click" Visible="True" />
-            </div>
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12" style="margin-top: 10px;">
+                    <asp:Button ID="Button6" runat="server" class="btn btnActualizar btn-lg" CausesValidation="false" Text="Actualizar" OnClick="Button6_Click" OnClientClick="Button6_Click" Visible="True" />
+                    <asp:Button ID="Button2" runat="server" class="btn btnPrimario btn-lg" CausesValidation="false" Text="Guardar" OnClick="Button2_Click" Visible="True" />
+                </div>
 
+            </div>
         </div>
-    </div>
     </div>
 
 

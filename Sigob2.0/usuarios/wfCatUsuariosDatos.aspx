@@ -81,7 +81,7 @@
                 <div class="col-12 col-lg-6 col-md-6">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Nombre</label>
-                        <asp:TextBox ID="TextBox2" runat="server" class="form-control" placeholder="Correo" required autofocus Style="text-transform: uppercase;"></asp:TextBox>
+                        <asp:TextBox ID="TextBox2" runat="server" class="form-control" placeholder="Nombre" required autofocus Style="text-transform: uppercase;"></asp:TextBox>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Correo</label>
@@ -90,6 +90,10 @@
                     <div class="form-group">
                         <label for="exampleInputEmail1">Perfil</label>
                         <asp:DropDownList ID="DropDownList1" class="form-control" placeholder="Perfil" runat="server"></asp:DropDownList>
+                    </div>
+                    <div class="form-group">                        
+                        <asp:CheckBox ID="CheckBox1" runat="server" value="Activo"/>
+                        <label for="exampleInputEmail1">Activo</label>
                     </div>
                 </div>
             </div>

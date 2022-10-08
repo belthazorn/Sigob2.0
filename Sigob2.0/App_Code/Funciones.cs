@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
+using System.Net.Security;
 using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Web;
 
@@ -83,5 +87,50 @@ public class Funciones
         }
     }
 
+    public static string enviamail(string mailenvio, string asunto, string cuerpo)
+    {
+        SmtpClient host = new SmtpClient();
+        host.Host = "webmail.joyeria5estrellas.com.mx";
+        //host.EnableSsl = true;
+        //host.Port = 2525;
+        //host.DeliveryMethod = SmtpDeliveryMethod.Network;
+        //host.UseDefaultCredentials = false;
+        host.Credentials = new System.Net.NetworkCredential("noresponder@joyeria5estrellas.com.mx", "eC5d50m*");
+
+        //host.Host = "smtp.gmail.com";
+        //host.Port = 587;
+        //host.EnableSsl = true;
+        //host.DeliveryMethod = SmtpDeliveryMethod.Network;
+        //host.UseDefaultCredentials = false;
+        //host.Credentials = new System.Net.NetworkCredential("joyeria5tienda@gmail.com", "fRGcUtzD");
+
+        //host.Host = "smtp.live.com";
+        //host.Port = 587;
+        //host.UseDefaultCredentials = false;
+        //host.DeliveryMethod = SmtpDeliveryMethod.Network;
+        //host.EnableSsl = true;
+        //host.Credentials = new System.Net.NetworkCredential("raul.a.lopez.lopez@hotmail.com", "JosephDanari83!");
+
+        MailMessage mensaje = new MailMessage();
+        mensaje.To.Add(mailenvio);
+        mensaje.From = new System.Net.Mail.MailAddress("noresponder@joyeria5estrellas.com.mx", "SIGOB");
+        //mensaje.From = new System.Net.Mail.MailAddress("raul.a.lopez.lopez@hotmail.com", "SIGOB");
+        mensaje.Subject = asunto;
+        mensaje.IsBodyHtml = true;
+        mensaje.Body = cuerpo;
+
+        try
+        {
+            //ServicePointManager.ServerCertificateValidationCallback = delegate (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) { return true; };
+            host.Send(mensaje);
+            return "OK";
+        }
+        catch (Exception e)
+        {
+            return e.ToString();
+        }
+
+
+    }
 }
 

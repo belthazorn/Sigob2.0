@@ -256,6 +256,74 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ComboSexo">
+        <s:complexType />
+      </s:element>
+      <s:element name="ComboSexoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ComboSexoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ComboEdocivil">
+        <s:complexType />
+      </s:element>
+      <s:element name="ComboEdocivilResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ComboEdocivilResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ComboTipoSangre">
+        <s:complexType />
+      </s:element>
+      <s:element name="ComboTipoSangreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ComboTipoSangreResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ComboEstatusKardex">
+        <s:complexType />
+      </s:element>
+      <s:element name="ComboEstatusKardexResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ComboEstatusKardexResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="BusquedaCurp">
         <s:complexType>
           <s:sequence>
@@ -544,6 +612,30 @@
   <wsdl:message name="ComboPerfilesSoapOut">
     <wsdl:part name="parameters" element="tns:ComboPerfilesResponse" />
   </wsdl:message>
+  <wsdl:message name="ComboSexoSoapIn">
+    <wsdl:part name="parameters" element="tns:ComboSexo" />
+  </wsdl:message>
+  <wsdl:message name="ComboSexoSoapOut">
+    <wsdl:part name="parameters" element="tns:ComboSexoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ComboEdocivilSoapIn">
+    <wsdl:part name="parameters" element="tns:ComboEdocivil" />
+  </wsdl:message>
+  <wsdl:message name="ComboEdocivilSoapOut">
+    <wsdl:part name="parameters" element="tns:ComboEdocivilResponse" />
+  </wsdl:message>
+  <wsdl:message name="ComboTipoSangreSoapIn">
+    <wsdl:part name="parameters" element="tns:ComboTipoSangre" />
+  </wsdl:message>
+  <wsdl:message name="ComboTipoSangreSoapOut">
+    <wsdl:part name="parameters" element="tns:ComboTipoSangreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ComboEstatusKardexSoapIn">
+    <wsdl:part name="parameters" element="tns:ComboEstatusKardex" />
+  </wsdl:message>
+  <wsdl:message name="ComboEstatusKardexSoapOut">
+    <wsdl:part name="parameters" element="tns:ComboEstatusKardexResponse" />
+  </wsdl:message>
   <wsdl:message name="BusquedaCurpSoapIn">
     <wsdl:part name="parameters" element="tns:BusquedaCurp" />
   </wsdl:message>
@@ -654,6 +746,22 @@
     <wsdl:operation name="ComboPerfiles">
       <wsdl:input message="tns:ComboPerfilesSoapIn" />
       <wsdl:output message="tns:ComboPerfilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ComboSexo">
+      <wsdl:input message="tns:ComboSexoSoapIn" />
+      <wsdl:output message="tns:ComboSexoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ComboEdocivil">
+      <wsdl:input message="tns:ComboEdocivilSoapIn" />
+      <wsdl:output message="tns:ComboEdocivilSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ComboTipoSangre">
+      <wsdl:input message="tns:ComboTipoSangreSoapIn" />
+      <wsdl:output message="tns:ComboTipoSangreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ComboEstatusKardex">
+      <wsdl:input message="tns:ComboEstatusKardexSoapIn" />
+      <wsdl:output message="tns:ComboEstatusKardexSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="BusquedaCurp">
       <wsdl:input message="tns:BusquedaCurpSoapIn" />
@@ -813,6 +921,42 @@
     </wsdl:operation>
     <wsdl:operation name="ComboPerfiles">
       <soap:operation soapAction="http://tempuri.org/ComboPerfiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComboSexo">
+      <soap:operation soapAction="http://tempuri.org/ComboSexo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComboEdocivil">
+      <soap:operation soapAction="http://tempuri.org/ComboEdocivil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComboTipoSangre">
+      <soap:operation soapAction="http://tempuri.org/ComboTipoSangre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComboEstatusKardex">
+      <soap:operation soapAction="http://tempuri.org/ComboEstatusKardex" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1023,6 +1167,42 @@
     </wsdl:operation>
     <wsdl:operation name="ComboPerfiles">
       <soap12:operation soapAction="http://tempuri.org/ComboPerfiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComboSexo">
+      <soap12:operation soapAction="http://tempuri.org/ComboSexo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComboEdocivil">
+      <soap12:operation soapAction="http://tempuri.org/ComboEdocivil" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComboTipoSangre">
+      <soap12:operation soapAction="http://tempuri.org/ComboTipoSangre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComboEstatusKardex">
+      <soap12:operation soapAction="http://tempuri.org/ComboEstatusKardex" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

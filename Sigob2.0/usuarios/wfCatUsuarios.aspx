@@ -65,15 +65,6 @@
                                 </asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField>
-                            <HeaderTemplate>Remover</HeaderTemplate>
-                            <ItemTemplate>
-                                <asp:LinkButton ID="lnkeditar" runat="server" CausesValidation="false" CssClass="btn btn-primary" CommandArgument='<%#Eval("UsuarioId")%>' CommandName="Remover"> 
-                                                     <i class="bi bi-file-x"></i>
-                                </asp:LinkButton>
-
-                            </ItemTemplate>
-                        </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
             </div>

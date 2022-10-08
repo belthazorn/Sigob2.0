@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.IO;
 using System.Web.Services;
+using System.Configuration;
 
 public partial class usuarios_wfCatUsuariosDatos : System.Web.UI.Page
 {
@@ -60,8 +61,15 @@ public partial class usuarios_wfCatUsuariosDatos : System.Web.UI.Page
                     if (Usuarios.Rows.Count == 1)
                     {
                         DataRow row = Usuarios.Rows[0];
-                        
+                        string nombre = row["nombre"].ToString();
+                        TextBox2.Text = nombre;
+                        TextBox2.ReadOnly = true;
+                        TextBox1.Text = row["correoins"].ToString();
+                        TextBox1.ReadOnly = true;
                         DropDownList1.SelectedValue = row["PerfilId"].ToString(); ;
+                        CheckBox1.Checked = Convert.ToBoolean(row["Estatus"]);
+                        busqueda.Visible = false;
+                        usuariodatos.Visible = true;
                         Button6.Visible = true;
                         Button2.Visible = false;
                     }
@@ -82,68 +90,16 @@ public partial class usuarios_wfCatUsuariosDatos : System.Web.UI.Page
 
     protected void Button6_Click(object sender, EventArgs e)
     {
-        //if (TextBox1.Text != "" && TextBox2.Text != "" && TextBox4.Text != "")
-        //{
-        //    p.UsuarioId = Request.QueryString["Id"].Replace(" ", "+");
-
-        //    p.NombreCompletoUsuario = TextBox1.Text.ToUpper();
-        //    p.Paterno = TextBox2.Text.ToUpper();
-        //    p.Materno = TextBox3.Text.ToUpper();
-        //    p.usuario = TextBox6.Text.ToUpper();
-        //    p.PerfilId = DropDownList1.SelectedValue;            
-        //    p.correo = TextBox4.Text.ToLower();
-        //    if (checkbox1.Checked == true)
-        //    {
-        //        p.Estatus = true;
-        //    }
-        //    else p.Estatus = false;
-        //    Session["UsuarioId"] = p.UsuarioId;
-        //    string errores = WS.UsuariosActualiza(p);
-        //    if (errores == "OK")
-        //    {
-        //        Titulo = "MiTiendaOnline";
-        //        Mensaje = "Los datos se han guardado correctamente";
-        //        TxtBoton = "OK";
-        //        Iconito = "bi bi-check-circle";
-        //        Button5.Visible = false;
-        //        Button3.Visible = true;
-        //        ScriptManager.RegisterStartupScript(this, this.GetType(), "modalSlideUp", "$('#modalSlideUp').modal('show');", true);
-        //    }
-        //    else
-        //    {
-        //        Titulo = "MiTiendaOnline";
-        //        Mensaje = errores;
-        //        TxtBotonNo = "CERRAR";
-        //        Iconito = "bi bi-x-circle";
-        //        Button5.Visible = true;
-        //        Button3.Visible = false;
-        //        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "modalSlideUp", "$('#modalSlideUp').modal();", true);
-        //    }
-        //}
-    }
-
-    protected void Button3_Click(object sender, EventArgs e)
-    {
-        Server.Transfer("../Index.aspx");
-    }
-
-
-    protected void Button2_Click(object sender, EventArgs e)
-    {
-        //if (TextBox1.Text != "" && TextBox2.Text != "" && TextBox4.Text != "")
-        //{
-        p.UsuarioId = Guid.NewGuid().ToString();
-        p.EmpeladoId = Session["EmpleadoId"].ToString();
-        p.PerfilId = DropDownList1.SelectedValue;
-        p.Contraseña = Funciones.EncriptarAES(WS.generapass());
+        
+        p.UsuarioId = Request.QueryString["Id"].Replace(" ", "+");
+        p.PerfilId = DropDownList1.SelectedValue;        
         p.correo = TextBox1.Text.ToLower();
-        p.Estatus = true;
-        p.Actualiza ="0";
-        string errores = WS.UsuariosAlta(p);
+        p.Estatus = CheckBox1.Checked;        
+        string errores = WS.UsuariosActualiza(p);
         if (errores == "OK")
         {
             Titulo = Titulo;
-            Mensaje = "Los datos se han guardado correctamente";
+            Mensaje = "Los datos se han actualizado correctamente";
             TxtBoton = "OK";
             Iconito = "bi bi-check-circle";
             Button2.Visible = false;
@@ -160,6 +116,62 @@ public partial class usuarios_wfCatUsuariosDatos : System.Web.UI.Page
             Button2.Visible = true;
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "modalSlideUp", "$('#modalSlideUp').modal();", true);
         }
+    }
+
+    protected void Button3_Click(object sender, EventArgs e)
+    {
+        Server.Transfer("../Index.aspx");
+    }
+
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        //busca si el correo no esta registrado
+        DataTable tresultados = WS.DatosUsuariomail(Funciones.EncriptarAES(TextBox1.Text));
+        if(tresultados.Rows.Count == 0)
+        {
+            p.UsuarioId = Guid.NewGuid().ToString();
+            p.EmpeladoId = Session["EmpleadoId"].ToString();
+            p.PerfilId = DropDownList1.SelectedValue;
+            p.Contraseña = Funciones.EncriptarAES(WS.generapass());
+            p.correo = TextBox1.Text.ToLower();
+            p.Estatus = true;
+            p.Actualiza = "0";
+            string errores = WS.UsuariosAlta(p);
+            if (errores == "OK")
+            {
+                envia(TextBox2.Text, p.Contraseña, p.correo);
+                Titulo = Titulo;
+                Mensaje = "Los datos se han guardado correctamente";
+                TxtBoton = "OK";
+                Iconito = "bi bi-check-circle";
+                Button2.Visible = false;
+                Button6.Visible = true;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "modalSlideUp", "$('#modalSlideUp').modal('show');", true);
+            }
+            else
+            {
+                Titulo = Titulo;
+                Mensaje = errores;
+                TxtBoton = "CERRAR";
+                Iconito = "bi bi-x-circle";
+                Button6.Visible = false;
+                Button2.Visible = true;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "modalSlideUp", "$('#modalSlideUp').modal();", true);
+            }
+        }
+        else
+        {
+            Titulo = Titulo;
+            Mensaje = "Este correo ya esta registrado";
+            TxtBoton = "CERRAR";
+            Iconito = "bi bi-x-circle";
+            Button6.Visible = false;
+            Button2.Visible = true;
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "modalSlideUp", "$('#modalSlideUp').modal();", true);
+        }
+
+        
     }
 
 
@@ -192,6 +204,7 @@ public partial class usuarios_wfCatUsuariosDatos : System.Web.UI.Page
                     DataRow row = tresultados.Rows[0];
                     TextBox2.Text = row["Nombre"].ToString() + " " + row["Paterno"].ToString() + " " + row["Materno"].ToString();
                     TextBox1.Text = row["correoins"].ToString();
+                    
                     usuariodatos.Visible = true;
                     Button2.Visible = true;
                     Session["EmpleadoId"] = valor;
@@ -211,5 +224,87 @@ public partial class usuarios_wfCatUsuariosDatos : System.Web.UI.Page
                 break;
 
         }
+    }
+
+
+    void envia(string nombre, string contraseña, string correo)
+    {
+        string cuerpo;
+        const string quote = "\"";
+        cuerpo =
+      "<div align=" + quote + "center" + quote + " width=" + quote + "100%" + quote + " style=" + quote + "font-family: Arial, Helvetica, sans-serif;" + quote + ">" +
+    "<table width=" + quote + " 90% " + quote + " bgcolor=" + quote + " #f6f8f1 " + quote + " border=" + quote + " 0" + quote + " cellpadding=" + quote + " 0" + quote + " cellspacing=" + quote + " 0" + quote + ">" +
+    "<tr>" +
+    "<td align=" + quote + "center" + quote + ">" +
+    "<img src=" + quote + ConfigurationManager.AppSettings["dominio"] + "/images/logoj.png" + quote + " width=" + quote + "8%" + quote + " border=" + quote + "0" + quote + " />" +
+    "</td>" +
+    "</tr>" +
+    "<tr>" +
+    "<td>" +
+    "<table align=" + quote + "center" + quote + " border=" + quote + "0" + quote + " cellpadding=" + quote + "25" + quote + " cellspacing=" + quote + "0" + quote + " style=" + quote + "width: 100%;" + quote + ">" +
+    "<tr>" +
+    "<td>" +
+    "<table width=" + quote + "100%" + quote + " border=" + quote + "0" + quote + " cellspacing=" + quote + "0" + quote + " cellpadding=" + quote + "0" + quote + ">" +
+    "<tr>" +
+    "<td align=" + quote + "center" + quote + ">" +
+    "<h1 style=" + quote + "margin-top:10px; margin-bottom:25px; color:#121212; font-size:20px" + quote + ">Hola," + nombre + "</h1>" +
+    "</td>" +
+    "</tr>" +
+    "<tr>" +
+    "<td align=" + quote + "center" + quote + ">" +
+    "Esta es la contraseña para tu acceso a SIGOB: " + contraseña  + 
+    "<br /><br />" +
+    "</td>" +
+    "</tr>" +
+    "<tr>" +
+    "<td>" +    
+    "</td>" +
+    "</tr>" +
+    "<tr>" +
+    "<td align=" + quote + "center" + quote + " style=" + quote + "padding-top:15px;" + quote + ">" +
+    "Es importante comentarte que si tienes algun problema con esto por favor escribenos a :" +
+    "</td>" +
+    "</tr>" +
+    "<tr><td align = " + quote + "center" + quote + " style = " + quote + "padding - top:15px; " + quote + ">soporte@scsiscoluciones.com</td></tr>" +
+    "<tr></tr>" +
+    "</table>" +
+    "</td>" +
+    "</tr>" +
+    "</table>" +
+    "</td>" +
+    "</tr>" +
+    "<tr>" +
+    "<td bgcolor=" + quote + "#44525f" + quote + ">" +
+    "<table width=" + quote + "100%" + quote + " border=" + quote + "0" + quote + " cellspacing=" + quote + "0" + quote + " cellpadding=" + quote + "5" + quote + ">" +
+    "<tr>" +
+    "<td align=" + quote + "center" + quote + " style=" + quote + "font-size:14px; color:#ffffff;" + quote + ">" +
+    "Municipio de Celaya / SSC <br />" +
+    "Todos los derechos reservados" +
+    "</td>" +
+    "</tr>" +
+    "<tr>" +
+    "<td align=" + quote + "center" + quote + ">" +
+    "<table border=" + quote + "0" + quote + " cellspacing=" + quote + "0" + quote + " cellpadding=" + quote + "0" + quote + ">" +
+    "<tr>" +
+    "<td width=" + quote + "37" + quote + " style=" + quote + "text-align: center; padding: 0 10px 0 10px;" + quote + ">" +
+    "<a href=" + quote + "#" + quote + ">" +
+    "<img src=" + quote + "https://micartaonline.com.mx/images/lf.png" + quote + " width=" + quote + "31" + quote + " + quote + " + quote + " height=" + quote + "36" + quote + " alt=" + quote + "Facebook" + quote + " border=" + quote + "0" + quote + " />" +
+    "</a>" +
+    "</td>" +
+    "<td width=" + quote + "37" + quote + " style=" + quote + "text-align: center; padding: 0 10px 0 10px;" + quote + ">" +
+    "<a href=" + quote + "#" + quote + ">" +
+    "<img src=" + quote + "https://micartaonline.com.mx/images/lin.png" + quote + " width=" + quote + "31" + quote + " height=" + quote + "36" + quote + " alt=" + quote + "Twitter" + quote + " border=" + quote + "0" + quote + " />" +
+    "</a>" +
+    "</td>" +
+    "</tr>" +
+    "</table>" +
+    "</td>" +
+    "</tr>" +
+    "</table>" +
+    "</td>" +
+    "</tr>" +
+    "</table>" +
+    "</div>";
+        string Errores = Funciones.enviamail(correo, "Contraseña SIGOB ", cuerpo);
     }
 }

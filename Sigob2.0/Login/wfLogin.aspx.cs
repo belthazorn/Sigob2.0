@@ -39,10 +39,10 @@ public partial class usuarios_wfLogin : System.Web.UI.Page
         if (TextBox1.Text != "" & TextBox2.Text != "")
         {
             System.Data.DataTable tusua;
-            tusua = WS.UsuariosLogin(TextBox1.Text, Funciones.EncriptarAES(TextBox2.Text));
+            tusua = WS.UsuariosLogin(Funciones.EncriptarAES(TextBox1.Text), Funciones.EncriptarAES(TextBox2.Text));
             if ((tusua.Rows.Count > 0))
             {
-                tusua = WS.DatosUsuario((TextBox1.Text));
+                tusua = WS.DatosUsuario((Funciones.EncriptarAES(TextBox1.Text)));
                 DataRow row = tusua.Rows[0];
 
                 Session["Login"] = true;
@@ -55,7 +55,16 @@ public partial class usuarios_wfLogin : System.Web.UI.Page
                     cookie.Expires = DateTime.Now.AddMinutes(30);
                     Response.Cookies.Add(cookie);
                 }
-                Response.Redirect("../Default.aspx");
+                Response.Redirect("../Index.aspx");
+            }
+            else
+            {
+                Titulo = Titulo;
+                Mensaje = "Usuario o contraseña Incorrectos";
+                TxtBoton = "CERRAR";
+                Iconito = "bi bi-x-circle";
+
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "modalSlideUp", "$('#modalSlideUp').modal();", true);
             }
         }
     }
